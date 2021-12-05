@@ -1,5 +1,6 @@
 [proxy]
-10.0.7.200
+10.0.7.200 hostnumber=200
+10.0.7.201 hostnumber=201
 
 [webservers]
 10.0.7.101 hostname=server1

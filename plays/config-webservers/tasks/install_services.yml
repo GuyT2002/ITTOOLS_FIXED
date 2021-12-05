@@ -1,10 +1,13 @@
 ---
 - name: install httpd
   package:
-    name: httpd
+    name: 
+      - httpd
+      - keepalived
+      - mod_ssl
     state: present
-
-- name: install keepalived
-  package:
-    name: keepalived
-    state: present
+#
+#- name: install keepalived
+#  package:
+#    name: keepalived
+#    state: present

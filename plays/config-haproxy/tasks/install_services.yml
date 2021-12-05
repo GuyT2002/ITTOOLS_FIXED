@@ -1,5 +1,9 @@
 ---
 - name: install haproxy service for the HAPROXY node
   package:
-    name: haproxy
+    name: "{{item}}"
     state: installed
+  with_items:
+    - haproxy
+    - keepalived
+    - bind
