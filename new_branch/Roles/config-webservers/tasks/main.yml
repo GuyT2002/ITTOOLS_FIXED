@@ -1,0 +1,21 @@
+---
+- name: install httpd and keepalived services
+  import_tasks: install_services.yml
+
+- name: move the files to the right place
+<<<<<<< HEAD
+  import_tasks: move_files.yml
+
+- name: move the ssl file to a different location
+  import_tasks: rename.yml 
+=======
+  import_tasks: move_files.yml 
+>>>>>>> 8892280c6b2da5cb01a132740ad9577e6c201b41
+
+- name: restart the httpd  and keepalived services after it is installed and the files are placed
+  service:
+    name: "{{ item }}"
+    state: restarted
+  loop:
+    - httpd
+    - keepalived

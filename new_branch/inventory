@@ -1,0 +1,21 @@
+[proxy]
+<<<<<<< HEAD
+10.0.7.200 hostnumber=200
+10.0.7.201 hostnumber=201
+=======
+10.0.7.200
+>>>>>>> 8892280c6b2da5cb01a132740ad9577e6c201b41
+
+[webservers]
+10.0.7.101 hostname=server1
+10.0.7.102 hostname=server2
+
+[all:vars]
+ansible_user=automation
+ansible_password=
+ansible_become_user=root
+<<<<<<< HEAD
+ansible_become_password=havita22
+=======
+ansible_become_password=********
+>>>>>>> 8892280c6b2da5cb01a132740ad9577e6c201b41
