@@ -1,0 +1,31 @@
+---
+- name: move index.html to the server
+  copy:
+    src: /home/automation/plays/config-webservers/files/{{hostname}}/{{item}}
+    dest: /var/www/html/{{item}}
+    owner: root
+    group: root
+  with_items:
+    - index.html
+    - image.jpeg
+
+- name: move the httpd.conf file
+  copy:
+    src: /home/automation/plays/config-webservers/files/{{hostname}}/httpd.conf
+    dest: /etc/httpd/conf/httpd.conf
+
+- name: create the ssl directory under the right place
+  file:
+    path: /var/www/html/ssl
+    state: directory
+    mode: '0755'
+
+- name: move the ssl files to the server
+  copy:
+    src: /home/automation/plays/config-webservers/files/{{item}}
+    dest: /var/www/html/ssl/{{item}}
+    owner: root
+    group: root
+  with_items:
+    - cert.crt
+    - private.key
