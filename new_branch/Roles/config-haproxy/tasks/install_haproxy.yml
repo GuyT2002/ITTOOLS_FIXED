@@ -1,5 +1,0 @@
----
-- name: install haproxy service for the HAPROXY node
-  package:
-    name: haproxy
-    state: installed
