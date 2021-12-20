@@ -1,36 +1,62 @@
 ---
+<<<<<<< HEAD
 - name: include vars (free-from)
   include_vars: /home/automation/new_branch/roles/config-haproxy/vars/file_location.yml
 
 - name: move config file to the right place on the HAPROXY node
   copy:
     src: "{{haproxy_local_source}}/haproxy.cfg"
+=======
+- name: move config file to the right place on the HAPROXY node
+  copy:
+    src: /home/automation/plays/config-haproxy/files/haproxy.cfg
+>>>>>>> f1eabf1770d8dac62b9892df7c54654e2cc30ff8
     dest: /etc/haproxy/haproxy.cfg
     mode: 0646
 
 - name: move keepalived.conf to the server
   copy:
+<<<<<<< HEAD
     src: "{{haproxy_local_source}}/keepalived{{hostnumber}}.conf"
+=======
+    src: /home/automation/plays/config-haproxy/files/keepalived{{hostnumber}}.conf
+>>>>>>> f1eabf1770d8dac62b9892df7c54654e2cc30ff8
     dest: /etc/keepalived/keepalived.conf
     mode: 0666
 
 - name: move keepalived health script to the server
   copy:
+<<<<<<< HEAD
     src: "{{haproxy_local_source}}/check.sh"
+=======
+    src: /home/automation/plays/config-haproxy/files/check.sh
+>>>>>>> f1eabf1770d8dac62b9892df7c54654e2cc30ff8
     dest: /etc/keepalived/check.sh
     mode: 0757
 
 - name: move the nameD configuration to the right place
   copy:
+<<<<<<< HEAD
     src: "{{haproxy_local_source}}/named.conf"
+=======
+    src: /home/automation/plays/config-haproxy/files/named.conf
+>>>>>>> f1eabf1770d8dac62b9892df7c54654e2cc30ff8
     dest: /etc/named.conf
 
 - name: move the dns zones to the right place
   copy:
+<<<<<<< HEAD
     src: "{{haproxy_local_source}}/com.fwd"
+=======
+    src: /home/automation/plays/config-haproxy/files/com.fwd
+>>>>>>> f1eabf1770d8dac62b9892df7c54654e2cc30ff8
     dest: /var/named/com.fwd
 
 - name: move the ssl .pem file to the right place
   copy:
+<<<<<<< HEAD
     src: "{{haproxy_local_source}}/ssl/final.pem"
+=======
+    src: /home/automation/plays/config-haproxy/files/ssl/final.pem
+>>>>>>> f1eabf1770d8dac62b9892df7c54654e2cc30ff8
     dest: /etc/ssl/final.pem

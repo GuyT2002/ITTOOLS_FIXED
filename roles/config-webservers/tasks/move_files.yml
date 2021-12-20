@@ -21,14 +21,23 @@
 
 - name: create the ssl directory under the right place
   file:
+<<<<<<< HEAD
     path: '{{web_files_destenation}}/ssl'
+=======
+    path: "{{ssl_dir}}"
+>>>>>>> f1eabf1770d8dac62b9892df7c54654e2cc30ff8
     state: directory
     mode: '0755'
 
 - name: move the ssl files to the server
   copy:
+<<<<<<< HEAD
     src: '{{web_files_location_local}}/{{item}}'
     dest: '{{web_files_destenation}}/ssl/{{item}}'
+=======
+    src: '{{shared_web_files_source}}/{{item}}'
+    dest: '{{shared_ssl_files_dest}}/{{item}}'
+>>>>>>> f1eabf1770d8dac62b9892df7c54654e2cc30ff8
     owner: root
     group: root
   with_items:
