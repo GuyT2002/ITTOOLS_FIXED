@@ -1,12 +1,13 @@
-Role Name
+Config haproxy
 =========
 
-A brief description of the role goes here.
+running this role on a group of servers will configure haproxy services between them, with keepalived and VIP and health check
+to make sure this is a HA cluster
 
 Requirements
 ------------
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+we need at least two servers, one to be the active and one to be passive.
 
 Role Variables
 --------------
