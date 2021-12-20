@@ -1,0 +1,8 @@
+---
+  vars:
+    web_files_location_local: /home/automation/new_branch/roles/config-webservers/files/{{hostname}}/{{item}}
+    web_files_destenation: /var/www/html/{{item}}
+    httpd_conf_dest: /etc/httpd/conf/{{item}}
+    ssl_dir: /var/www/html/ssl
+    shared_web_files_source: /home/automation/new_branch/roles/config-webservers/files/{{item}}
+    shared_ssl_files_dest: /var/www/html/ssl/{{item}}

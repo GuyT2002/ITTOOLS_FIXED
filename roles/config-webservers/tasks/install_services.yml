@@ -1,0 +1,8 @@
+---
+- name: install httpd, keepalived and mod_ssl packages for the server
+  package:
+    name: 
+      - httpd
+      - keepalived
+      - mod_ssl
+    state: present
