@@ -1,0 +1,36 @@
+---
+- name: Bare include (free-form)
+  include_vars: /home/automation/new_branch/roles/config-webservers/vars/file_location.yml
+
+- name: move index.html to the server
+  copy:
+    src: '{{web_files_location_local}}/{{hostname}}/{{item}}'
+    dest: '{{web_files_destenation}}/{{item}}'
+    owner: root
+    group: root
+  with_items:
+    - index.html
+    - image.jpeg
+
+- name: move the httpd.conf file
+  copy:
+    src: '{{web_files_location_local}}/{{hostname}}/{{item}}'
+    dest: '{{httpd_conf_dest}}/{{item}}'
+  with_items:
+    - httpd.conf
+
+- name: create the ssl directory under the right place
+  file:
+    path: '{{web_files_destenation}}/ssl'
+    state: directory
+    mode: '0755'
+
+- name: move the ssl files to the server
+  copy:
+    src: '{{web_files_location_local}}/{{item}}'
+    dest: '{{web_files_destenation}}/ssl/{{item}}'
+    owner: root
+    group: root
+  with_items:
+    - cert.crt
+    - private.key

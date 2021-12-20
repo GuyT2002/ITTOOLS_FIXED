@@ -1,0 +1,4 @@
+---
+web_files_location_local: /home/automation/new_branch/roles/config-webservers/files
+web_files_destenation: /var/www/html
+httpd_conf_dest: /etc/httpd/conf
