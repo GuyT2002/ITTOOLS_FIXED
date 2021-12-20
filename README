@@ -1,3 +1,18 @@
 ======================
 |       README       |
 ======================
+the roles have their own READ MEs under their directories.
+Basically, they toghther configure a cluster of 4 servers: two HAproxy which have a keepalived betweens them
+configured with the VIP *.*.*.150
+the two webservers are preconfigured with ips *.*.*.101-102, and will each get the matching configuration
+by the webserver files respectevely.
+
+you Obviusly need root access to the servers.
+example playbook:
+
+---
+  - hosts: all
+    become: true
+    roles:
+      - {"role": config-webservers, "when": 'inventory_hostname in groups["webservers"]'}
+      - {"role": config-haproxy, "when": "inventory_hostname in groups['proxy']"}
